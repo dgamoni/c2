@@ -119,6 +119,14 @@ class Our_Portfolio_Section extends Widget_Base {
 			$repeater = new Repeater();
 
 					$repeater->add_control(
+						'tab_1_porfolio_title',
+						[
+							'label' => __( 'Title', 'elementor-hello-world' ),
+							'type' => Controls_Manager::TEXT,
+						]
+					);
+
+					$repeater->add_control(
 						'tab_1_logos_porfolio',
 						[
 							'label' => __( 'Logo', 'elementor-hello-world' ),
@@ -182,6 +190,14 @@ class Our_Portfolio_Section extends Widget_Base {
 			);
 
 			$repeater2 = new Repeater();
+
+					$repeater->add_control(
+						'tab_2_porfolio_title',
+						[
+							'label' => __( 'Title', 'elementor-hello-world' ),
+							'type' => Controls_Manager::TEXT,
+						]
+					);
 
 					$repeater->add_control(
 						'tab_2_logos_porfolio',
@@ -268,6 +284,7 @@ class Our_Portfolio_Section extends Widget_Base {
 
 							    </div>
 								<div class="project_el_hover_p">
+									<div class="tab_porfolio_title"><?=$item['tab_1_porfolio_title']?></div>
 									<div class="tab__investment"><?=$item['tab_1_investment']?></div>
 									<?php if ($item['tab_1_uninvested']) { ?>
 							        	<div class="tab__uninvested"><?=$item['tab_1_uninvested']?></div>
@@ -285,6 +302,7 @@ class Our_Portfolio_Section extends Widget_Base {
 
 							    </div>
 								<div class="project_el_hover_p">
+									<div class="tab_porfolio_title"><?=$item['tab_1_porfolio_title']?></div>
 									<div class="tab__investment"><?=$item['tab_1_investment']?></div>
 									<?php if ($item['tab_1_uninvested']) { ?>
 							        	<div class="tab__uninvested"><?=$item['tab_1_uninvested']?></div>
@@ -327,6 +345,7 @@ class Our_Portfolio_Section extends Widget_Base {
 
 							    </div>
 								<div class="project_el_hover_p">
+									<div class="tab_porfolio_title"><?=$item['tab_2_porfolio_title']?></div>
 									<div class="tab__investment"><?=$item['tab_2_investment']?></div>
 									<?php if ($item['tab_2_uninvested']) { ?>
 							        	<div class="tab__uninvested"><?=$item['tab_2_uninvested']?></div>
@@ -345,6 +364,7 @@ class Our_Portfolio_Section extends Widget_Base {
 
 							    </div>
 								<div class="project_el_hover_p">
+									<div class="tab_porfolio_title"><?=$item['tab_2_porfolio_title']?></div>
 									<div class="tab__investment"><?=$item['tab_2_investment']?></div>
 									<?php if ($item['tab_2_uninvested']) { ?>
 							        	<div class="tab__uninvested"><?=$item['tab_2_uninvested']?></div>
@@ -369,6 +389,10 @@ class Our_Portfolio_Section extends Widget_Base {
 		</div>
 
 		<style>
+		.project_el_hover_p div.tab_porfolio_title {
+			width: 100%;
+			font-size: 18px;
+		}
 		.tab-image {
 			width: 100%;
 			text-align: center;
@@ -400,18 +424,27 @@ class Our_Portfolio_Section extends Widget_Base {
 			    height: 100%;
 			    /*padding: 50px;	*/			
 			}
+			.project_el_main_p img {
+				    object-fit: contain;
+			}
 
 			.tab_category_p.tab_active {
-				border-bottom: 5px solid;
+				border-bottom: 9px solid;
 				color: #51626f;
+			}
+			.tab_category_p.tab_active span {
+			    margin-top: 7px;
+			    display: block;				
 			}
 			.tab_category_p {
 				min-width: 200px;
     			text-align: center;
 				padding: 10px;
 				text-transform: uppercase;
-				border-bottom: 5px solid #ccc;
+				/*border-bottom: 5px solid #ccc;*/
 				color: #cccccc;
+				border-bottom: 1px solid #ccc;
+    			/*box-sizing: content-box;*/
 			}
 			.tab_category_p:hover {
 				cursor: pointer;
@@ -432,9 +465,9 @@ class Our_Portfolio_Section extends Widget_Base {
 
 				flex: 20%;
 				position: relative;
-flex-wrap: wrap;
-    max-width: 269px;
-    height: 269px;				
+				flex-wrap: wrap;
+			    /*max-width: 269px;*/
+			    height: 269px;				
 			}
 
 			.project_el_p:hover {
@@ -500,18 +533,27 @@ flex-wrap: wrap;
     			text-indent: -10000000px;
 			}
 			.project_el_hover_p a.tab__link::before {
-				content: '\2795';
+/*				content: '\2795';
 				position: absolute;
 				width: 20px;
 				height: 20px;
 				border-radius: 50%;
 				border: 1px solid;
 				left: 0;
-    color: #3c70c8;
-        text-indent: 0;
-    padding-left: 2px;
-    font-size: 11px;
-    line-height: 1.6;
+				color: #3c70c8;
+				text-indent: 0;
+				padding-left: 3px;
+				font-size: 11px;
+				line-height: 1.6;
+				border-color: #3c70c8;*/
+
+				/*content: url(<?php //echo plugins_url( '/assets/img/arrow.svg', __DIR__ ); ?>);*/
+				content: url(<?php echo plugins_url( '/assets/img/world.svg', __DIR__ ); ?>);
+			    position: absolute;
+			    width: 30px;
+			    height: 30px;
+			    left: 0;
+			    text-indent: 0;			
 			}
 
 
@@ -563,6 +605,9 @@ flex-wrap: wrap;
 				.project_el_hover_p div {
 				    width: 100%;
 				}
+				.tab_category_p {
+				    font-size: 12px;
+				}				
 			}
 
 		</style>

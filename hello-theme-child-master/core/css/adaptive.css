@@ -1,18 +1,93 @@
 
+@media (min-width: 1760px) {
 
-@media (max-width: 1200px) {
+	.red_squeare:before {
+		top: -23px;
+	}
 
 }
+
+@media (max-width: 1760px) {
+
+	.red_squeare:before {
+		top: -28px;
+	}
+
+}
+
+@media (max-width: 1600px) {
+
+	.red_squeare:before {
+		top: -32px;
+	}
+
+}
+
+@media (max-width: 1400px) {
+
+	.red_squeare:before {
+		top: -37px;
+	}
+
+}
+@media (max-width: 1300px) {
+
+	.red_squeare:before {
+    	top: -42px;
+    	margin-left: 98px;
+	}
+
+}
+@media (max-width: 1200px) {
+
+	.red_squeare:before {
+		margin-left: initial;
+	    left: initial;
+	    right: -10px;
+	}
+
+}
+
+
 
 @media (max-width: 998px) {
 
+
+
 }
+
+
 
 @media (max-width: 768px) {
 
+	.red_squeare:before {
+		left: 50%;
+	    margin-left: 113px;
+	    top: -26px;	
+	}
+
+
 }
+
+@media (max-width: 640px) {
+
+	.red_squeare:before {
+		margin-left: initial;
+	    left: initial;
+	    right: -10px;
+	}
+
+
+}
+
 
 @media (max-width: 480px) {
 
+	.red_squeare:before {
+		
+	}
+
 }
+
+
 

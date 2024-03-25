@@ -5,6 +5,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 
+
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
@@ -116,6 +117,19 @@ class Our_Funds_Section extends Widget_Base {
 				]
 			);
 
+			$this->add_control(
+				'color_style_1',
+				[
+					'label' => __( 'Color Style', 'elementor-hello-world' ),
+					'type' => Controls_Manager::SELECT,
+					'default' => 'orange',
+					'options' => [
+						'orange'  => __( 'Orange', 'elementor-hello-world' ),
+						'blue' => __( 'Blue', 'elementor-hello-world' ),
+					],
+				]
+			);
+
 			$repeater = new Repeater();
 
 					$repeater->add_control(
@@ -186,6 +200,19 @@ class Our_Funds_Section extends Widget_Base {
 				[
 					'label' => __( 'Category name', 'elementor-hello-world' ),
 					'type' => Controls_Manager::TEXT,
+				]
+			);
+
+			$this->add_control(
+				'color_style_2',
+				[
+					'label' => __( 'Color Style', 'elementor-hello-world' ),
+					'type' => Controls_Manager::SELECT,
+					'default' => 'orange',
+					'options' => [
+						'orange'  => __( 'Orange', 'elementor-hello-world' ),
+						'blue' => __( 'Blue', 'elementor-hello-world' ),
+					],
 				]
 			);
 
@@ -265,7 +292,7 @@ class Our_Funds_Section extends Widget_Base {
 			<div class="tab_category tab_2_category" data-tab="2"><span><?=$settings['tab_2_category']?></span></div>
 		</div>
 
-		<div class="tab_section tab_section_1 current">
+		<div class="tab_section tab_section_1 current <?=$settings['color_style_1']?>">
 			<div class="tab_section_wrap tab_section_1_wrap">
 
 				<?php 
@@ -279,10 +306,15 @@ class Our_Funds_Section extends Widget_Base {
 							        <span class="tab__fund_type"><?=$item['tab_1_fund_type']?></span>
 							    </div>
 								<div class="project_el_hover">
-									<?php if ($item['tab_1_logos']["url"]) : ?>
+									<?php if ($item['tab_1_logos']["url"]) : 
+										$tab_logos_none = '';
+									?>
 										<img src="<?=$item['tab_1_logos']["url"]?>" class="tab_logos">
+									<?php else: 
+										$tab_logos_none = 'tab_logos_none';
+									?>
 									<?php endif; ?>
-							        <span class="tab_regist_number"><?php echo __( '', 'elementor-hello-world' ) . ' ' . $item['tab_1_regist_number']; ?></span>
+							        <span class="tab_regist_number <?php echo $tab_logos_none; ?>"><?php echo __( '', 'elementor-hello-world' ) . ' ' . $item['tab_1_regist_number']; ?></span>
 							    </div>						        
 						    </div>
 						
@@ -294,7 +326,7 @@ class Our_Funds_Section extends Widget_Base {
 			</div>
 		</div>
 
-		<div class="tab_section tab_section_2">
+		<div class="tab_section tab_section_2 <?=$settings['color_style_2']?>">
 			<div class="tab_section_wrap tab_section_2_wrap">
 
 				<?php 
@@ -308,10 +340,16 @@ class Our_Funds_Section extends Widget_Base {
 							        <span class="tab__fund_type"><?=$item['tab_2_fund_type']?></span>
 							    </div>
 								<div class="project_el_hover">
-									<?php if ($item['tab_2_logos']["url"]) : ?>
+
+									<?php if ($item['tab_2_logos']["url"]) : 
+										$tab_logos_none = '';
+									?>
 										<img src="<?=$item['tab_2_logos']["url"]?>" class="tab_logos">
+									<?php else: 
+										$tab_logos_none = 'tab_logos_none';
+									?>										
 									<?php endif; ?>
-							        <span class="tab_regist_number"><?php echo __( '', 'elementor-hello-world' ) . ' ' . $item['tab_2_regist_number']; ?></span>
+							        <span class="tab_regist_number <?php echo $tab_logos_none; ?>"><?php echo __( '', 'elementor-hello-world' ) . ' ' . $item['tab_2_regist_number']; ?></span>
 							    </div>						        
 						    </div>
 						
@@ -347,19 +385,24 @@ class Our_Funds_Section extends Widget_Base {
 			    flex-direction: column;
 			    flex-wrap: wrap;
 			    height: 100%;
-			    padding: 50px;				
+			    /*padding: 50px;*/	
+			    padding: 40px 50px;			
 			}
 
 			.tab_category.tab_active {
-				border-bottom: 5px solid;
+				border-bottom: 9px solid;
 				color: #51626f;
 			}
+			.tab_category.tab_active span {
+			    margin-top: 7px;
+			    display: block;				
+			}			
 			.tab_category {
 				min-width: 200px;
     			text-align: center;
 				padding: 10px;
 				text-transform: uppercase;
-				border-bottom: 5px solid #ccc;
+				border-bottom: 1px solid #ccc;
 				color: #cccccc;
 			}
 			.tab_category:hover {
@@ -378,14 +421,14 @@ class Our_Funds_Section extends Widget_Base {
 
 			.project_el {
 				color: white;
-				min-height: 340px;
-				max-height: 340px;
+/*				min-height: 340px;
+				max-height: 340px;*/
+				min-height: 200px;
+				max-height: 200px;				
 				flex: 50%;
 				position: relative;
 			}
-			.project_el-0 {
-				background-color: #51626f;
-			}
+
 			.project_el-2:before {
 				content: '';
 				position: absolute;
@@ -393,17 +436,60 @@ class Our_Funds_Section extends Widget_Base {
 				    width: 146px;
 			    height: 67px;
 			    background-repeat: no-repeat;
-			        right: 0px;
+				right: -1px;
+			    top: -1px;
 			}
 			.project_el-1:before {
 				content: '';
 				position: absolute;
-				background-image: url(<?php echo plugins_url( '/assets/img/pr-2.png', __DIR__ ); ?>);
-				width: 146px;
-			    height: 146px;
+				background-image: url(<?php echo plugins_url( '/assets/img/pr-2-new.png', __DIR__ ); ?>);
+			    width: 37px;
+			    /*height: 146px;*/
 			    background-repeat: no-repeat;
 			    right: 0;
-			}						
+			    /*top: 95px;*/
+			    height: 100px;
+			    top: -1px;
+			}
+			.blue .project_el-3:before {
+				content: '';
+				position: absolute;
+				background-image: url(<?php echo plugins_url( '/assets/img/pr-2-new.png', __DIR__ ); ?>);
+			    width: 37px;
+			   /* height: 146px;*/
+			    background-repeat: no-repeat;
+			    right: 0;
+			    /*top: 95px;*/
+			    left: initial;
+			    height: 100px;
+			    top: -1px;
+			}
+			.blue .project_el-1:before, .blue .project_el-2:before {
+				content: '';
+				position: absolute;
+				background-image: url(<?php echo plugins_url( '/assets/img/pr-1.png', __DIR__ ); ?>);
+				width: 147px;
+			    height: 37px;
+			    background-repeat: no-repeat;
+			    left: calc(50% - 70px);
+			    bottom: -1px;
+			    top: inherit;
+			}
+			.blue .project_el-2:before {
+
+			}			
+			.blue .project_el-0:before {
+				content: '';
+				position: absolute;
+				background-image: url(<?php echo plugins_url( '/assets/img/pr-3.png', __DIR__ ); ?>);
+				    width: 146px;
+			    height: 67px;
+			    background-repeat: no-repeat;
+				right: -1px;
+			    top: -2px;
+			    left: initial;
+			}
+
 			.project_el-0:before,
 			.project_el-3:before,
 			.project_el-4:before {
@@ -415,19 +501,42 @@ class Our_Funds_Section extends Widget_Base {
 			    background-repeat: no-repeat;
 			    left: calc(50% - 70px);
 			}
+			.project_el-0:before {
+				top: -1px;
+			}			
 			.project_el-3:before, 
 			.project_el-4:before {
 				bottom: -2px;
 			}
+
+			.project_el-0 {
+				background-color: #51626f;
+			}
+			.blue .project_el-0 {
+				background-color: #cccccc;
+			}
+
 			.project_el-1 {
 				background-color: #ef4136;
 			}
+			.blue .project_el-1 {
+				background-color: #1c4587;
+			}
+
 			.project_el-2 {
 				background-color: #002336;
 			}
+			.blue .project_el-2 {
+				background-color: #0086cf;
+			}
+
 			.project_el-3 {
 				background-color: #ded9cc;
 			}
+			.blue .project_el-3 {
+				background-color: #efdbc8;
+			}
+
 			.project_el-4 {
 				background-color: #9ebdcf;
 			}
@@ -475,6 +584,13 @@ class Our_Funds_Section extends Widget_Base {
 			    position: absolute;
 			    top: -4px;
 			}
+			.tab_regist_number.tab_logos_none {
+				position: relative;
+			}
+			.tab_regist_number.tab_logos_none:before {
+				left: 50%;
+			    margin-left: -20px;
+			}			
 
 			@media (max-width: 1200px) {
 
@@ -491,17 +607,50 @@ class Our_Funds_Section extends Widget_Base {
 			}
 
 			@media (max-width: 480px) {
-
+				.tab_category {
+				    font-size: 12px;
+				}
 			}
 
 		</style>
 		<script>
 			jQuery(function ($) {
-				$('.project_el').hover(function() {
-					$(this).addClass('project__hovers');
-				}, function() {
-					$(this).removeClass('project__hovers');
+
+				// for (var i = 0; i < 4; i++) {
+				// 	var timer = {};
+				// 	$('.project_el-'+i).click(function() {
+				// 		window.clearTimeout(timer[i]);
+
+				// 		var project_el = $(this);
+				// 		project_el.addClass('project__hovers');
+
+				// 	    timer[i] = setTimeout(function () {
+				// 	      project_el.removeClass('project__hovers');
+				// 	    }, 3000);
+
+				// 	});
+				// }
+
+				var timer;
+
+				$('.project_el').click(function() {
+					 window.clearTimeout(timer);
+					 $('.project_el').removeClass('project__hovers');
+
+					var project_el = $(this);
+					project_el.addClass('project__hovers');
+
+				    timer = setTimeout(function () {
+				      project_el.removeClass('project__hovers');
+				    }, 3000);
+
 				});
+
+				// $('.project_el').toggle(function() {
+				// 	$(this).addClass('project__hovers');
+				// }, function() {
+				// 	$(this).removeClass('project__hovers');
+				// });
 
 				$('.tab_category').click(function(){
 					var tab_id = $(this).attr('data-tab');

@@ -1,9 +1,62 @@
 .collapse-section {
+
 	display: none;
+
 }
+
 .collapse-button img:hover {
+
 	cursor: pointer;
+
 }
+
 img.button-rotate {
+
 	transform: rotate(180deg);
+
+}
+
+.red_squeare {
+
+	position: relative;
+
+	display: block;
+
+}
+
+.red_squeare:before {
+
+	content: '';
+
+	/*content: url(../img/red-rect.gif);*/
+
+	position: absolute;
+
+	background-image: url(../img/red-rect.gif);
+
+    width: 200px;
+
+    height: 62px;
+
+    /*right: 42px;*/
+
+    top: -35px;
+
+    z-index: -1;
+
+    left: 50%;
+    margin-left: 120px;
+}
+
+.red_squeare2 {
+    background-image: url(../img/red-rect.gif);
+    width: 654px;
+    height: 654px;
+    display: inline-block;
+    margin-top: -592px;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.red_squeare2 img {
+
 }
