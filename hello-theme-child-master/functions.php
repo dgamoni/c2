@@ -41,5 +41,11 @@ add_filter( 'elementor/fonts/additional_fonts', function( $additional_fonts ) {
 	return $additional_fonts;
 } );
 
+// Now if they are included by your theme, you are done.
+// if not you can hook in to the elementor/fonts/print_font_links/{$font_type} action hook to enqueque your theme fonts, ex:
+add_action( 'elementor/fonts/print_font_links/theme_fonts', function( $font_name ) {
+  wp_enqueue_style( 'my-theme-google-fonts', '//fonts.googleapis.com/css?family=DM+Sans' );
+} );
+
 // load core functions
 require_once get_stylesheet_directory() . '/core/load.php';

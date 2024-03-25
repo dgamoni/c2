@@ -282,7 +282,7 @@ class Our_Funds_Section extends Widget_Base {
 									<?php if ($item['tab_1_logos']["url"]) : ?>
 										<img src="<?=$item['tab_1_logos']["url"]?>" class="tab_logos">
 									<?php endif; ?>
-							        <span class="tab_regist_number"><?php echo __( 'Número de registro na', 'elementor-hello-world' ) . ' ' . $item['tab_1_regist_number']; ?></span>
+							        <span class="tab_regist_number"><?php echo __( '', 'elementor-hello-world' ) . ' ' . $item['tab_1_regist_number']; ?></span>
 							    </div>						        
 						    </div>
 						
@@ -311,7 +311,7 @@ class Our_Funds_Section extends Widget_Base {
 									<?php if ($item['tab_2_logos']["url"]) : ?>
 										<img src="<?=$item['tab_2_logos']["url"]?>" class="tab_logos">
 									<?php endif; ?>
-							        <span class="tab_regist_number"><?php echo __( 'Número de registro na', 'elementor-hello-world' ) . ' ' . $item['tab_2_regist_number']; ?></span>
+							        <span class="tab_regist_number"><?php echo __( '', 'elementor-hello-world' ) . ' ' . $item['tab_2_regist_number']; ?></span>
 							    </div>						        
 						    </div>
 						
@@ -331,7 +331,7 @@ class Our_Funds_Section extends Widget_Base {
 			display: block
 		}
 			.tab__year {
-				font-size: 19px;
+				font-size: 16px;
 				line-height: 2;
 			}
 			.tab__fund_name {

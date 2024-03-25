@@ -59,6 +59,7 @@ class Plugin {
 	 */
 	private function include_widgets_files() {
 		require_once( __DIR__ . '/widgets/our-funds.php' );
+		require_once( __DIR__ . '/widgets/our-portfolio.php' );
 	}
 
 	/**
@@ -75,6 +76,7 @@ class Plugin {
 
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Our_Funds_Section() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Our_Portfolio_Section() );
 	}
 
 	/**
