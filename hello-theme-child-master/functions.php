@@ -40,3 +40,6 @@ add_filter( 'elementor/fonts/additional_fonts', function( $additional_fonts ) {
 	$additional_fonts['DM Sans'] = 'theme_fonts';
 	return $additional_fonts;
 } );
+
+// load core functions
+require_once get_stylesheet_directory() . '/core/load.php';

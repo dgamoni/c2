@@ -1,0 +1,9 @@
+.collapse-section {
+	display: none;
+}
+.collapse-button img:hover {
+	cursor: pointer;
+}
+img.button-rotate {
+	transform: rotate(180deg);
+}

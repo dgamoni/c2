@@ -58,7 +58,7 @@ class Plugin {
 	 * @access private
 	 */
 	private function include_widgets_files() {
-		require_once( __DIR__ . '/widgets/video-panel.php' );
+		require_once( __DIR__ . '/widgets/our-funds.php' );
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Plugin {
 		$this->include_widgets_files();
 
 		// Register Widgets
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Video_Panel_Editing() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Our_Funds_Section() );
 	}
 
 	/**
