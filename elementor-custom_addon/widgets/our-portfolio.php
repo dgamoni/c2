@@ -320,7 +320,7 @@ class Our_Portfolio_Section extends Widget_Base {
 				?>
 
 				<div class="tab-image tab1-image">
-					<img width="40" height="40" src="https://www.goclap.com/c2/wp-content/uploads/2020/06/c2_arrow.svg" class="attachment-full size-full" alt="" srcset="https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 150w, https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 300w, https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 1024w, https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 40w" sizes="(max-width: 40px) 100vw, 40px">
+					<img width="40" height="40" src="https://c2capital.pt/wp-content/uploads/2020/06/c2_arrow.svg" class="attachment-full size-full" alt="" srcset="https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 150w, https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 300w, https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 1024w, https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 40w" sizes="(max-width: 40px) 100vw, 40px">
 				</div>
 
 			</div>
@@ -382,7 +382,7 @@ class Our_Portfolio_Section extends Widget_Base {
 				?>
 
 				<div class="tab-image tab2-image">
-					<img width="40" height="40" src="https://www.goclap.com/c2/wp-content/uploads/2020/06/c2_arrow.svg" class="attachment-full size-full" alt="" srcset="https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 150w, https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 300w, https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 1024w, https://www.goclap.com/c2/wp-content/uploads//2020/06/c2_arrow.svg 40w" sizes="(max-width: 40px) 100vw, 40px">
+					<img width="40" height="40" src="https://c2capital.pt/wp-content/uploads/2020/06/c2_arrow.svg" class="attachment-full size-full" alt="" srcset="https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 150w, https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 300w, https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 1024w, https://c2capital.pt/wp-content/uploads//2020/06/c2_arrow.svg 40w" sizes="(max-width: 40px) 100vw, 40px">
 				</div>
 
 			</div>
